@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser'
 import {Router} from 'express'
-import {productStripFields} from '../../../helpers.js'
+import {productStripFields} from '../../../common/helpers.js'
 
 function ensureFields(body) {
     const fields = productStripFields(body)

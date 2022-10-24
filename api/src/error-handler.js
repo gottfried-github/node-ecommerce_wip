@@ -1,5 +1,5 @@
 import createError from 'http-errors'
-import * as m from '../../messages.js'
+import * as m from '../../common/messages.js'
 
 function errorHandler(e, req, res, next) {
     if (!e) return next()
