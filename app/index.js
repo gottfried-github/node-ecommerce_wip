@@ -23,3 +23,5 @@ function main(port) {
 
     return {app, server}
 }
+
+main(3000)
