@@ -1,6 +1,6 @@
 import {Router} from 'express'
 
-import {product} from './routes/product.js'
+import product from './routes/product.js'
 import {errorHandler} from './error-handler.js'
 
 function api(store) {

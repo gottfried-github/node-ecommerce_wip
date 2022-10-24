@@ -2,7 +2,7 @@ import express from 'express'
 import {MongoClient} from 'mongodb'
 
 import {api as _api} from '../api/src/index.js'
-import {store as _store} from '../store/src/index.js'
+import _store from '../store/src/index.js'
 
 function main(port) {
     /* connect to database */
