@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser'
 import {Router} from 'express'
-import {makeEnsureFields, ensureFieldsCreate, ensureFieldsUpdate} from './product-helpers.js'
+import {makeEnsureFields, ensureFieldsCreate, ensureFieldsUpdate, handleUpdateMissingFields} from './product-helpers.js'
 
 function product(product) {
     const router = Router()

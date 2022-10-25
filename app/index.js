@@ -21,7 +21,7 @@ function main(port) {
     /* start server */
     const server = app.listen(port)
 
-    return {app, server}
+    return {app, server, api, store}
 }
 
-main(3000)
+console.log(main(3000))
