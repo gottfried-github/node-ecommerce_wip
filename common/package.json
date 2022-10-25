@@ -15,5 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "ajv-errors-to-data-tree": "^0.7.1"
+  },
+  "devDependencies": {
+    "migrate-mongo": "^9.0.0"
   }
 }
