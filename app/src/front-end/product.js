@@ -2,19 +2,45 @@ import './product.html'
 import './product.css'
 import {ObjectId} from 'bson'
 
-function id() {
-    return new ObjectId()
+function send(data) {
+    return fetch('api/product/create', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
+function success(body) {
+    // return fetch(`api/product/${body._id}`, {method: 'GET'})
+    // .then(res => {
+    //     return res.json()
+    // }).then(body => {
+    //     console.log("got the written product:", body)
+    // })
+}
+
+function failure() {
+    return Promise.resolve()
 }
 
 function main() {
-    console.log('main')
-    const idInput = document.querySelector('.input-text#item')
-    const idBtn = document.querySelector('.button-input')
+    const data = {
+        name: "Samsung Galaxy A11",
+        itemInitial: new ObjectId().toString(),
+        isInSale: true
+    }
 
-    idBtn.addEventListener('click', (ev) => {
-        ev.preventDefault()
-        console.log('item id button clicked');
-        idInput.value = id().toString()
+    console.log("data to send", data)
+    send(data).then(res => {
+        console.log('response:', res)
+
+        return res.json()
+    }).then((body, res) => {
+        console.log('parsed response body', body)
+
+        return (res.ok) ? success(body) : failure(body)
     })
 }
 
