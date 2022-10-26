@@ -23,6 +23,7 @@
     "mongodb": "^4.11.0"
   },
   "devDependencies": {
+    "bson": "^4.7.0",
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
     "sass": "^1.55.0",

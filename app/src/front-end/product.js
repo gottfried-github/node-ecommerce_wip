@@ -1,8 +1,9 @@
 import './product.html'
 import './product.css'
+import {ObjectId} from 'bson'
 
 function id() {
-    return Math.random()
+    return new ObjectId()
 }
 
 function main() {

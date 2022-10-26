@@ -21,7 +21,7 @@ function main(port) {
     const api = _api(store)
 
     const app = express()
-    app.use('/', express.static(path.join(__dirname, './src/front-end/')))
+    app.use('/', express.static(path.join(__dirname, './dist/front-end')))
     app.use('/api/', api)
 
     /* start server */
