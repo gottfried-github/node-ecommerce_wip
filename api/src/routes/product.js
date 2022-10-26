@@ -8,14 +8,14 @@ function product(product) {
     router.post('/create', bodyParser.json(), makeEnsureFields(ensureFieldsCreate), async (req, res, next) => {
         // console.log('/admin/product/create, body.fields:', req.body.fields)
 
-        let doc = null
+        let id = null
         try {
-            doc = await product.create(req.body.fields)
+            id = await product.create(req.body.fields)
         } catch(e) {
             return next(e)
         }
 
-        res.status(201).json(doc)
+        res.status(201).json(id)
         // res.send('/product-create: endpoint is not implemented yet')
     })
 
