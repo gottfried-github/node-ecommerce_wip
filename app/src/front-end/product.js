@@ -1,5 +1,5 @@
-// import './product.html'
-// import './product.css'
+import './product.html'
+import './product.css'
 
 function id() {
     return Math.random()
