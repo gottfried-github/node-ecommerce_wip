@@ -48,7 +48,7 @@ docker run -it --tty -v "$(pwd)":/app -w /app --network <network-name> node bash
 ```
 
 ### Inside the running container, run node with these environment variables
-`APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> NET_NAME=<network-name> node app/index.js`
+`APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> NET_NAME=<network-alias> node app/index.js`
 
 ### Access the network
 run `docker ps`, find container with IMAGE of "node" and copy it's ID (e.g., e28354082f09)
@@ -59,7 +59,7 @@ this is taken from [here](https://stackoverflow.com/a/56741737)
 
 ### Apply migrations
 From the node container:
-`APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> node_modules/.bin/migrate-mongo up -f store/migrate-mongo-config.js`
+`APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> NET_NAME=<network-alias> node_modules/.bin/migrate-mongo up -f store/migrate-mongo-config.js`
 
 But before that, temporarily remove the `type: "module"` field in `common/package.json` (where `migrate-mongo` is ran from) and `store/package.json` (where the migrations directory is): `migrate-mongo` doesn't work with ES modules.
 

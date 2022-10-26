@@ -2,7 +2,7 @@
 const config = {
   mongodb: {
     // In this project I only use migrate-mongo to `create` migration files, which doesn't use the `url` option
-    url: `mongodb://${process.env.APP_DB_USER}:${process.env.APP_DB_PASS}@bazar-mongo-n/${process.env.APP_DB_NAME}`,
+    url: `mongodb://${process.env.APP_DB_USER}:${process.env.APP_DB_PASS}@${process.env.NET_NAME}/${process.env.APP_DB_NAME}`,
 
     // TODO Change this to your database name:
     // databaseName: "YOURDATABASENAME",
