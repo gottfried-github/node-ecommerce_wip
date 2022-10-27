@@ -2,7 +2,9 @@
 A modular e-commerce application, implementing the specification, defined [here](#data-structure).
 
 This is a sketch. Only `product` create and read routes and store work as evident in [the demo](#run-demo). 
+
 To run, see [this](#run).
+
 To test store product controllers, see [this](#test-store-controllers).
 
 # Data structure
