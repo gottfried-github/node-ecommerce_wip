@@ -57,6 +57,9 @@ then `docker inspect` that container and find *NetworkSettings.Networks.mongodb-
 
 this is taken from [here](https://stackoverflow.com/a/56741737)
 
+### Run demo
+With the app running, go to `/product.html` (e.g., `172.18.0.3:3000/product.html`) and see console.
+
 ### Apply migrations
 In `common`, run the node container, as described above; from the node container:
 `APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> NET_NAME=<network-alias> node_modules/.bin/migrate-mongo up -f migrate-mongo-config.js`
