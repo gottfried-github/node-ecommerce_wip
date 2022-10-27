@@ -1,12 +1,14 @@
 import createError from 'http-errors'
 import * as m from '../../common/messages.js'
+import {isValidBadInputTree} from '../../common/helpers.js'
 
 function errorHandler(e, req, res, next) {
     if (!e) return next()
 
+    console.log('errorHandler, e:', e);
     if (e instanceof Error) {
         // req.log("handleApiErrors, an instance of Error occured, the instance:", e)
-        return res.status(500).send()
+        return res.status(500).json({message: e.message})
     }
 
     if (e instanceof m.Message) {

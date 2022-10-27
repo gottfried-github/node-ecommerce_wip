@@ -60,6 +60,12 @@ const InvalidCriterion = new Message(12, (o, message, data) => {
     return o
 })
 
+// error format violates the spec, outlined in docs
+const InvalidErrorFormat = new Message(8, (o) => {
+    o.message = "error format violates specification"
+    return o
+})
+
 export {
     Message,
 
@@ -70,5 +76,6 @@ export {
     ValidationError,
     ResourceNotFound,
     InvalidCriterion,
-    FieldUnknown
+    FieldUnknown,
+    InvalidErrorFormat
 }
