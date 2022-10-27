@@ -12,8 +12,8 @@ function send(data) {
     })
 }
 
-function success(body) {
-    // return fetch(`api/product/${body._id}`, {method: 'GET'})
+function success(res) {
+    // return fetch(`api/product/${res.body}`, {method: 'GET'})
     // .then(res => {
     //     return res.json()
     // }).then(body => {
@@ -21,7 +21,7 @@ function success(body) {
     // })
 }
 
-function failure() {
+function failure(res) {
     return Promise.resolve()
 }
 
@@ -36,11 +36,13 @@ function main() {
     send(data).then(res => {
         console.log('response:', res)
 
-        return res.json()
-    }).then((body, res) => {
-        console.log('parsed response body', body)
+        return res.json().then((body) => {
+            return {res, body}
+        })
+    }).then((res) => {
+        console.log('parsed response body', res.body)
 
-        return (res.ok) ? success(body) : failure(body)
+        return (res.res.ok) ? success(res) : failure(res)
     })
 }
 
