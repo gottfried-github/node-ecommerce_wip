@@ -58,8 +58,8 @@ then `docker inspect` that container and find *NetworkSettings.Networks.mongodb-
 this is taken from [here](https://stackoverflow.com/a/56741737)
 
 ### Apply migrations
-From the node container:
-`APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> NET_NAME=<network-alias> node_modules/.bin/migrate-mongo up -f store/migrate-mongo-config.js`
+In `common`, run the node container, as described above; from the node container:
+`APP_DB_NAME=app APP_DB_USER=app APP_DB_PASS=<app password> NET_NAME=<network-alias> node_modules/.bin/migrate-mongo up -f migrate-mongo-config.js`
 
 But before that, temporarily remove the `type: "module"` field in `common/package.json` (where `migrate-mongo` is ran from) and `store/package.json` (where the migrations directory is): `migrate-mongo` doesn't work with ES modules.
 
