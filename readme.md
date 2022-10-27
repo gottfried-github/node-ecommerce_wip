@@ -153,9 +153,5 @@ this is taken from [here](https://stackoverflow.com/a/56741737)
 ### Run demo
 With the app running, go to `/product.html` (e.g., `172.18.0.3:3000/product.html`) and see console.
 
-<!-- # Test store
-```bash
-git clone <clone url>
-cd <cloned directory>/store
-npm run test
-``` -->
+### Test store controllers
+From `store`, run `npm run test`
