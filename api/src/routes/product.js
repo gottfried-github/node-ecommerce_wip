@@ -40,14 +40,14 @@ function product(product) {
     // see '/api/admin/product:id' in notes for why I don't validate params.id
     router.get('/:id', async (req, res, next) => {
         // console.log('/api/admin/product/, req.query:', req.query);
-        let product = null
+        let _product = null
         try {
-            product = await product.getById(req.params.id)
+            _product = await product.getById(req.params.id)
         } catch(e) {
             return next(e)
         }
 
-        res.status(200).json(product)
+        res.status(200).json(_product)
     })
 
     return router
