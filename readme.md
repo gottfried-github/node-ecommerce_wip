@@ -39,9 +39,8 @@ Api transmits the received data over to the store. In doing so, it should make s
 Assign status codes and messages to the output of the store and send it in response to the client.
 
 # Store
-Store implements the interface, defined [below](#crud).
+Store implements the interface, defined here.
 
-# CRUD
 ## Validation error format
 `ajv-errors-to-data-tree`-formatted tree resembling the input data, with the errors being `ValidationError`, `FieldMissing`, `TypeErrorMsg`
 
