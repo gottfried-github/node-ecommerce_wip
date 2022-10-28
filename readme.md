@@ -156,4 +156,6 @@ this is taken from [here](https://stackoverflow.com/a/56741737)
 With the app running, go to `/product.html` (e.g., `172.18.0.3:3000/product.html`) and see console.
 
 ### Test store controllers
-From `store`, run `npm run test`
+`git clone` this repo;
+
+from `store`, run `npm run test`
