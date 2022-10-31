@@ -1,4 +1,3 @@
-import {productStripFields} from '../../../common/helpers.js'
 import * as m from '../../../common/messages.js'
 
 function ensureFields(body) {
@@ -56,6 +55,15 @@ function convertToAEDT(errors) {
     }
 
     return root
+}
+
+function productStripFields(fields) {
+    const _fields = {}
+    if ('name' in fields) _fields.name = fields.name
+    if ('itemInitial' in fields) _fields.itemInitial = fields.itemInitial
+    if ('isInSale' in fields) _fields.isInSale = fields.isInSale
+
+    return _fields
 }
 
 export {

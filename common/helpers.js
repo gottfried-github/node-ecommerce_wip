@@ -21,13 +21,4 @@ function isValidBadInputTree(tree) {
     return true
 }
 
-function productStripFields(fields) {
-    const _fields = {}
-    if ('name' in fields) _fields.name = fields.name
-    if ('itemInitial' in fields) _fields.itemInitial = fields.itemInitial
-    if ('isInSale' in fields) _fields.isInSale = fields.isInSale
-
-    return _fields
-}
-
-export {isValidBadInputTree, productStripFields}
+export {isValidBadInputTree}
